@@ -9,23 +9,23 @@
 ### 1. 安装工具
 
 ```bash
-git clone git@github.com:leiyueoh/clone-skill.git ~/.claude/clone-skill
-chmod +x ~/.claude/clone-skill/*.sh
+git clone git@github.com:leiyueoh/clone-skill.git ~/projects/clone-skill
+chmod +x ~/projects/clone-skill/*.sh
 ```
 
 ### 2. 安装 skill
 
 ```bash
-~/.claude/clone-skill/install-skill.sh <github-url> [--name <name>]
+~/projects/clone-skill/install-skill.sh <github-url> [--name <name>]
 ```
 
 **示例：**
 ```bash
 # 自动从 SKILL.md 读取名称
-~/.claude/clone-skill/install-skill.sh git@github.com:user/my-skill.git
+~/projects/clone-skill/install-skill.sh git@github.com:user/my-skill.git
 
 # 自定义名称
-~/.claude/clone-skill/install-skill.sh https://github.com/user/my-skill --name custom-name
+~/projects/clone-skill/install-skill.sh https://github.com/user/my-skill --name custom-name
 ```
 
 ---
@@ -37,7 +37,7 @@ chmod +x ~/.claude/clone-skill/*.sh
 ### Step 1: 检查工具是否已安装
 
 ```bash
-ls ~/.claude/clone-skill/install-skill.sh
+ls ~/projects/clone-skill/install-skill.sh
 ```
 
 如果不存在，先执行安装命令（见上方「安装工具」）。
@@ -49,7 +49,7 @@ ls ~/.claude/clone-skill/install-skill.sh
 1. **判断是否是 skill 仓库** — 检查仓库是否包含 `SKILL.md` 文件
 2. **如果是 skill** — 执行安装：
    ```bash
-   ~/.claude/clone-skill/install-skill.sh <github-url>
+   ~/projects/clone-skill/install-skill.sh <github-url>
    ```
 3. **如果不是 skill** — 根据用户意图克隆到指定位置
 4. **确认机制** — 执行前必须向用户确认
