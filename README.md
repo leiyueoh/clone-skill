@@ -92,6 +92,31 @@ description: 一句话描述这个 skill 的功能
 
 ---
 
+## auto-backup-skills.sh — skill 自动备份
+
+把 `~/.claude/skills/` 备份到 `git@github.com:leiyueoh/claude-skills.git`。
+
+```bash
+~/projects/clone-skill/auto-backup-skills.sh
+```
+
+**依赖的 cron**（每小时）：
+
+```
+0 * * * * /home/leiyu/projects/clone-skill/auto-backup-skills.sh
+```
+
+**语义：** 只备份新增和修改 —— 本地删掉的 skill **不会**从远程移除。
+因此 `~/.claude/skills` 的工作区会长期带着一批未提交的 `D`（删除）条目，
+这是预期行为，**不要**用 `git add -A` 手动提交，那会把远程备份里的 skill 一并删掉。
+
+**日志：** `~/.claude/skills/auto-backup.log`（随仓库一起备份）。
+
+> 2026-09-24 重建。原脚本未纳入版本管理，随目录迁移丢失，cron 仍指旧路径
+> （`~/.claude/clone-skill/`），自 2026-07-09 起静默失败约 2.5 个月。现已提交入库。
+
+---
+
 ## License
 
 MIT
